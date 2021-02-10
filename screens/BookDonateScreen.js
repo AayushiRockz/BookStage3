@@ -43,7 +43,11 @@ export default class BookDonateScreen extends Component{
         subtitle={item.reason_to_request}
         titleStyle={{ color: 'black', fontWeight: 'bold' }}
         rightElement={
-            <TouchableOpacity style={styles.button}>
+
+            <TouchableOpacity style={styles.button} 
+            onPress={()=>{
+              this.props.navigation.navigate("RecieverDetails", {"details":item})
+            }}>
               <Text style={{color:'#ffff'}}>View</Text>
             </TouchableOpacity>
           }
@@ -72,6 +76,7 @@ export default class BookDonateScreen extends Component{
               />
             )
           }
+
         </View>
       </View>
     )
